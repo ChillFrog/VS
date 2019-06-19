@@ -1,0 +1,35 @@
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            double basePrice = Double.Parse(textBox2.Text);
+            double totalPrice = basePrice;
+            if (radioButton_Copy1.IsChecked == true)
+                totalPrice += basePrice * 0.2;
+            if (radioButton_Copy2.IsChecked == true)
+                totalPrice += basePrice * 0.5;
+            if (Kond.IsChecked == true)
+                totalPrice += basePrice * 0.30;
+            if (Holod.IsChecked == true)
+                totalPrice += basePrice * 0.15;
+            if (Obed.IsChecked == true)
+                totalPrice += basePrice + 600;
+                
+            res.Text = totalPrice.ToString();
+        }
+
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Clear();
+            textBox_Copy.Clear();
+            textBox_Copy1.Clear();
+            textBox2.Clear();
+            res.Clear();
+        }
+    }
+}
