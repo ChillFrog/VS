@@ -1,0 +1,28 @@
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        
+            {
+                try
+                {
+                    double StoronaA = double.Parse(texta.Text);
+                    double StoronaB = double.Parse(textb.Text);
+                    double StoronaC;
+                    StoronaC = Math.Sqrt(Math.Pow(StoronaA, 2) + Math.Pow(StoronaB, 2));
+                    Reshenie.Text = StoronaC.ToString();
+                }
+                catch
+                {
+                    MessageBox.Show("Ввели неверные данные");
+                }
+            }
+        
+    }
+}
