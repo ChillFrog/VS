@@ -1,0 +1,50 @@
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            double basePrice = Double.Parse(textBox2.Text);
+            double totalPrice = basePrice;
+            if (_5zvezd.IsChecked == true)
+            {
+                totalPrice += basePrice * 0.10;
+            }
+
+            if (_4zvezdi.IsChecked == true)
+            {
+                totalPrice += basePrice * 0.6;
+            }
+
+            if (Kondec.IsChecked == true)
+            {
+                totalPrice += basePrice * 0.20;
+            }
+
+            if (Holodil.IsChecked == true)
+            {
+                totalPrice += basePrice * 0.25;
+            }
+
+            if (Obed.IsChecked == true)
+            {
+                totalPrice += basePrice + 500;
+            }
+
+            stoim.Text = totalPrice.ToString();
+
+        }
+
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Clear();
+            textBox_Copy.Clear();
+            textBox_Copy1.Clear();
+            textBox2.Clear();
+            stoim.Clear();
+        }
+    }
+}
