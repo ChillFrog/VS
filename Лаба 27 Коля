@@ -1,0 +1,49 @@
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            double basePrice = Double.Parse(textBox2.Text);
+            double totalPrice = basePrice;
+            ComboBoxItem cb = (ComboBoxItem)comboBox1.SelectedItem;
+            StackPanel sp = (StackPanel)cb.Content;
+            TextBlock tovar = (TextBlock)sp.Children[0];
+            TextBlock price = (TextBlock)sp.Children[1];
+            MessageBox.Show(tovar.Text + " " + price.Text);
+            textBox3.Text = totalPrice.ToString();
+        }
+
+        private void proverka(object sender, RoutedEventArgs e)
+        {
+            string login = "Сапогова Г.С";
+            string password = "1234";
+
+            if (Surname.Text == login && passwordBox.Password == password)
+            {
+                MessageBox.Show("Добро пожаловать!");
+                button1.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Неправильные даннын");
+            }
+        }
+        private void Sbros(object sender, RoutedEventArgs e)
+        {
+            Surname.Clear();
+            passwordBox.Clear();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            checkBox.IsChecked = false;
+            radioButton.IsChecked = false;
+            radioButton1.IsChecked = false;
+            comboBox1.SelectedIndex = -1;
+            comboBox.SelectedIndex = -1;
+        }
+    }
+}
