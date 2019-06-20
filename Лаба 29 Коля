@@ -1,0 +1,46 @@
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Sbros_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Clear();
+            textBox1.Clear();
+            comboBox2SelectedIndex = -1;
+            textBox3Clear();
+            rasstoyn.Clear();
+            rashodClear();
+            radioButton.IsChecked = false;
+            radioButton1.IsChecked = false;
+            textBox3.Clear();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            double Base = double.Parse(textBox2.Text);
+            double res;
+            double lenght
+            double rast;
+            double rashod
+            l = Convert.ToDouble(textBox2.Text);
+            rast = Convert.ToDouble(rasstoyn.Text);
+            rash = Convert.ToDouble(rashod.Text);
+            res = l * rash / 100 * rast;
+            if (radioButton1.IsChecked == true)
+                res *= 2;
+            textBox3.Text = res.ToString();
+        }
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboBox.SelectedIndex == 0)
+                textBox2.Text = "30";
+            if (comboBox.SelectedIndex == 1)
+                textBox2.Text = "45";
+            if (comboBox.SelectedIndex == 2)
+                textBox2.Text = "60";
+        }
+    }
+}
